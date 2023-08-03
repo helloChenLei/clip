@@ -46,7 +46,7 @@ Richard Dawkins on memes - Cannes Lions 2013
 
 理查德-道金斯谈备忘录 - 2013 年戛纳国际电影节
 
-[Watch on 观看![Watch on YouTube](watch-on-youtube.1ebfe98.svg)](https://www.youtube.com/watch?v=xCzb6SuyriU)
+![](https://www.youtube.com/watch?v=xCzb6SuyriU)
 
 ![This is an image](hqdefault.jpg "Video player poster image")
 
@@ -188,7 +188,7 @@ The Trojan Room Coffe Pot on Look East
 
 特洛伊房间咖啡壶在东望楼
 
-[Watch on 观看![Watch on YouTube](watch-on-youtube.1ebfe98.svg)](https://www.youtube.com/watch?v=QB7qWQ9fn1k)
+![](https://www.youtube.com/watch?v=QB7qWQ9fn1k)
 
 ![This is an image](hqdefault.1.jpg "Video player poster image")
 
@@ -224,7 +224,7 @@ The 1st ever webcam - Connectix Quickcam
 
 首款网络摄像头 - Connectix Quickcam
 
-[Watch on 观看![Watch on YouTube](watch-on-youtube.1ebfe98.svg)](https://www.youtube.com/watch?v=ZxQjMlwDA8A)
+![](https://www.youtube.com/watch?v=ZxQjMlwDA8A)
 
 ![This is an image](hqdefault.2.jpg "Video player poster image")
 
