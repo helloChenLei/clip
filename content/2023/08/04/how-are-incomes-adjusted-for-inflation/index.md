@@ -7,7 +7,7 @@ taxonomies:
 extra:
   source: https://ourworldindata.org/how-are-incomes-adjusted-for-inflation
   hostname: ourworldindata.org
-  author: By: Joe Hasell and Max Roser作者：Joe Hasell 和 Max Roser作者：乔-哈塞尔和马克斯-罗瑟
+  author: By: Joe Hasell and Max Roser
   original_title: "How are incomes adjusted for inflation?"
   original_lang: zh
 ---
