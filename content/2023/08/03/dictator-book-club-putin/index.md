@@ -12,10 +12,6 @@ extra:
   original_lang: zh
 ---
 
-_\[previously in series: [Erdogan](https://astralcodexten.substack.com/p/book-review-the-new-sultan?s=w), [Modi](https://astralcodexten.substack.com/p/book-review-modi-a-political-biography?s=w), [Orban](https://astralcodexten.substack.com/p/dictator-book-club-orban), [Xi](https://astralcodexten.substack.com/p/dictator-book-club-xi-jinping)\]  
-
-\[上一辑：埃尔多安、莫迪、欧尔班、习近平］_
-
 Vladimir Putin appeared on Earth fully-formed at the age of nine.  
 
 弗拉基米尔-普京九岁时就已经完全成形，出现在地球上。
