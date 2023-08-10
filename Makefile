@@ -11,7 +11,7 @@ install:
 serve:
 	./bin/deno run --no-lock -A cli.ts --serve
 
-.Phony: build
+.Phony: build && python3 ./scripts/sitemap.py
 build:
 	./bin/deno run --no-lock -A ./cli.ts
 
