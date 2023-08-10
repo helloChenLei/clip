@@ -8,12 +8,9 @@ install:
 	./scripts/install_mdbook.sh
 
 .Phony: serve
-serve: sitemap
-	./bin/deno run --no-lock -A cli.ts --serve
-
-.Phony: sitemap
-sitemap:
+serve: 
 	./scripts/generate_sitemap.sh
+	./bin/deno run --no-lock -A cli.ts --serve
 
 .Phony: build 
 build: 
