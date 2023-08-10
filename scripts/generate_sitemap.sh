@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_path="dist/archive/"
+directory_path="./"
 output_file="templates/archive/sitemap.xml"
 
 # 清空原来的内容

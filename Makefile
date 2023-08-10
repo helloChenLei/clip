@@ -8,11 +8,11 @@ install:
 	./scripts/install_mdbook.sh
 
 .Phony: serve
-serve: sitemap
+serve: 
 	./bin/deno run --no-lock -A cli.ts --serve
 
 .Phony: build 
-build: 
+build: sitemap
 	./bin/deno run --no-lock -A ./cli.ts
 
 .Phony: sitemap
