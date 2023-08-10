@@ -14,7 +14,6 @@ serve:
 
 .Phony: build 
 build: 
-	./scripts/generate_sitemap.sh
 	./bin/deno run --no-lock -A ./cli.ts
 
 # The following targets are for building the daily epub, or the weekly epub, or send mail.
