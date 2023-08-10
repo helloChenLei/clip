@@ -24,5 +24,21 @@
 <!-- End of Howxm client code snippet -->
 
 {{!-- 添加 Google Adsense --}}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8928486131841664"
-  crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8928486131841664" crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('h1').forEach(title => {
+      const adElement = document.createElement('div');
+      adElement.innerHTML = `
+        <!-- Google Adsense 单元广告代码 -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8928486131841664" data-ad-slot="7899992237"
+          data-ad-format="auto" data-full-width-responsive="true"></ins>
+        `;
+
+      title.insertAdjacentElement('afterend', adElement);
+      // 添加加载Google Adsense的代码
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+  });
+</script>
