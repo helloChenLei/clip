@@ -1,6 +1,6 @@
 #!/bin/bash
 
-directory_path="/dist/archive/"
+directory_path="./dist/archive"
 output_file="templates/archive/sitemap.xml"
 
 # 清空原来的内容
@@ -10,6 +10,7 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> $output_f
 # 遍历目录并生成sitemap
 find $directory_path -type f -name '*.html' | sort -r | while read -r file; do
   url="https://clip.demochen.com${file#./dist}"
+  url=${url/\/archive/} 
   # 排除特定URL
   if [[ $url != "https://clip.demochen.com/google2f1b618e04952db7.html" && \
         $url != "https://clip.demochen.com/404.html" ]]; then
