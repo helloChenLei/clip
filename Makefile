@@ -8,16 +8,16 @@ install:
 	./scripts/install_mdbook.sh
 
 .Phony: serve
-serve: 
+serve: sitemap
 	./bin/deno run --no-lock -A cli.ts --serve
-
-.Phony: build 
-build: sitemap
-	./bin/deno run --no-lock -A ./cli.ts
 
 .Phony: sitemap
 sitemap:
 	./scripts/generate_sitemap.sh
+
+.Phony: build 
+build: 
+	./bin/deno run --no-lock -A ./cli.ts
 
 # The following targets are for building the daily epub, or the weekly epub, or send mail.
 # If you only want to build the site, you can ignore them.

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 directory_path="./"
-output_file="templates/archive/sitemap.xml"
+output_file="./templates/archive/sitemap.xml"
 
 # 清空原来的内容
 echo '<?xml version="1.0" encoding="UTF-8"?>' > $output_file
