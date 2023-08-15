@@ -48,6 +48,12 @@ Reader</a>
 > RSS
 > 订阅：<a href="https://clip.demochen.com/feed.xml" target="_blank">https://clip.demochen.com/feed.xml</a>
 
+若你觉得本站对你有些许帮助，
+
+可以通过「赞助」的方式来支持我的运营和后续更新。
+
+> 赞助地址：<a href="https://demochen.com/sponsors/" target="_blank">https://demochen.com/sponsors/</a>
+
 ---
 
 所有文章
