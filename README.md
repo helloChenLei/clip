@@ -26,8 +26,8 @@ Reader</a>
 
 工作流程：
 
-- 浏览网页时用
-  <a href="https://github.com/immersive-translate/immersive-translate" target="_blank">Immersive-translate（沉浸式翻译）</a>
+- 浏览时用
+  <a href="https://github.com/immersive-translate/immersive-translate" target="_blank">Immersive-translate </a> +  <a href="https://www.deepl.com/translator" target="_blank">DeepL</a> 
   完成中英文对照翻译；
 - 如有必要，再用
   <a href="https://github.com/theowenyoung/markdownload" target="_blank">Markdownload</a>
@@ -43,7 +43,8 @@ Reader</a>
 2. 筛选标准：**半衰期尽可能较长**的文章；
 3. 本站内容均不是原创，如有侵权，联系删除；
 4. 更新频次不定，可根据左侧目录查看对应日期文章；
-5. 联系邮箱：i#demochen.com (将`#`换成`@`)。
+5. 所有文章的翻译并未经过人工校对，全部是机翻；
+6. 联系邮箱：i#demochen.com (将`#`换成`@`)。
 
 > RSS
 > 订阅：<a href="https://clip.demochen.com/feed.xml" target="_blank">https://clip.demochen.com/feed.xml</a>
