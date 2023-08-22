@@ -1,2 +1,5 @@
+# robots.txt 
 User-agent: *
-Disallow:
+Disallow: 
+Allow: /
+Sitemap: https://clip.demochen.com/sitemap.xml
