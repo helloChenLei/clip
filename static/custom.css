@@ -1,3 +1,8 @@
 html {
   font-family: "LXGW WenKai", sans-serif;
 }
+
+h2,
+h3 {
+  margin-top: 0rem !important;
+}
