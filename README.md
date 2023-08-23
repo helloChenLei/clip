@@ -24,7 +24,7 @@ Reader</a>
 
 经过不到 1 小时的折腾，站在巨人的肩膀上，我的 **DemoChen's Clip** 复刻成功。
 
-工作流程：
+## 流程
 
 - 浏览时用
   <a href="https://github.com/immersive-translate/immersive-translate" target="_blank">Immersive-translate </a> +  <a href="https://www.deepl.com/translator" target="_blank">DeepL</a> 
@@ -37,17 +37,21 @@ Reader</a>
 - 最后
   <a href="https://vercel.com/" target="_blank">Vercel</a> 会自动化完成部署。
 
-说明：
+## 说明
 
-1. 99.78% 的文章会提供**中英文双语版本**；
-2. 筛选标准：**半衰期尽可能较长**的文章；
+1. 筛选标准：**半衰期尽可能较长**的文章；
+2. 99.78% 的文章会提供**中英文双语版本**；
 3. 更新频次不定，可根据左侧目录查看对应日期文章；
-4. 所有文章的翻译并未经过人工校对，全部是机翻；
-5. 文中「#CM 」部分是我自己的评论或者想法，注意识别；
-6. 联系邮箱：i#demochen.com (将`#`换成`@`)。
+4. 文中「#CM」部分是我自己的评论或者想法，注意识别；
 
-> RSS
-> 订阅：<a href="https://clip.demochen.com/feed.xml" target="_blank">https://clip.demochen.com/feed.xml</a>
+## 订阅
+
+若希望查看最新文章，可以通过 RSS 订阅本站。
+
+> 订阅地址：<a href="https://clip.demochen.com/feed.xml" target="_blank">https://clip.demochen.com/feed.xml</a>
+
+
+## 赞助
 
 若你觉得本站对你有些许帮助，
 
@@ -55,11 +59,21 @@ Reader</a>
 
 > 赞助地址：<a href="https://demochen.com/sponsors/" target="_blank">https://demochen.com/sponsors/</a>
 
+## 作者
+
+本站是由 [@DemoChen](https://demochen.com/) 创建并维护，如果有更好的建议或者想法，欢迎来信交流。
+
+我的其他站点：
+
+- [DemoChen’s Blog](https://demochen.com)：个人博客，记录自己生活、学习和思考
+- [今天长这样](https://today.demochen.com)：记录天空的颜色，欢迎投稿
+- [DocHub.wiki](https://www.dochub.wiki)：优质的公开文档聚合站
+
+联系邮箱：i#demochen.com (将`#`换成`@`)。
 
 注：本站内容均不是原创，如有侵权，联系删除。
 
----
 
-所有文章
+## 所有文章
 
 <!-- Table of Content-->
