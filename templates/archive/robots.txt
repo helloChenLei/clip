@@ -1,5 +1,4 @@
 # robots.txt 
 User-agent: *
-Disallow: 
-Allow: /
-Sitemap: https://clip.demochen.com/sitemap.xml
+Disallow: /
+# Sitemap: https://clip.demochen.com/sitemap.xml
