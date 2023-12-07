@@ -7,7 +7,7 @@ taxonomies:
 extra:
   source: https://www.belfercenter.org/publication/ai-and-trust
   hostname: www.belfercenter.org
-  author: Author: Bruce Schneier
+  author:  Bruce Schneier
   original_title: "AI and Trust"
   original_lang: en
 ---
