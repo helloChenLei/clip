@@ -7,7 +7,7 @@ taxonomies:
 extra:
   source: https://ourworldindata.org/limits-personal-experience
   hostname: ourworldindata.org
-  author: By: Max Roser
+  author: By Max Roser
   original_title: "The limits of our personal experience and the value of statistics"
   original_lang: en
 ---
