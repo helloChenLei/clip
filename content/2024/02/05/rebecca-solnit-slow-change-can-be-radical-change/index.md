@@ -10,7 +10,7 @@ extra:
   author: By Rebecca Solnit作者：丽贝卡-索尔尼特
 
 January 11, 20242024 年 1 月 11 日
-  original_title: "Rebecca Solnit: Slow Change Can Be Radical Change"
+  original_title: "Rebecca Solnit-Slow Change Can Be Radical Change"
   original_lang: en
 ---
 
