@@ -7,9 +7,7 @@ taxonomies:
 extra:
   source: https://lithub.com/rebecca-solnit-slow-change-can-be-radical-change/
   hostname: lithub.com
-  author: By Rebecca Solnit作者：丽贝卡-索尔尼特
-
-January 11, 20242024 年 1 月 11 日
+  author: By Rebecca Solnit
   original_title: "Rebecca Solnit-Slow Change Can Be Radical Change"
   original_lang: en
 ---
