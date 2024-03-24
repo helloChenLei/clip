@@ -8,7 +8,7 @@ extra:
   source: https://seantrott.substack.com/p/llms-and-the-not-problem
   hostname: seantrott.substack.com
   author: Sean Trott
-  original_title: "LLMs and the "not" problem"
+  original_title: "LLMs and the not problem"
   original_lang: en
 ---
 
