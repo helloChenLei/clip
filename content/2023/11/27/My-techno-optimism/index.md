@@ -8,7 +8,7 @@ extra:
   source: https://vitalik.eth.limo/general/2023/11/27/techno_optimism.html
   hostname: vitalik.eth.limo
   author: 
-  original_title: "My techno-optimism  "
+  original_title: "My techno-optimism"
   original_lang: en
 ---
 
