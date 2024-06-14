@@ -1,5 +1,5 @@
 ---
-title: "Why you spend more when prices end in .99 - Kent Hendricks"
+title: "为什么当价格以0.99结束时，你会花更多的钱"
 date: 2024-05-29T20:11:36+08:00
 updated: 2024-05-29T20:11:36+08:00
 taxonomies:
