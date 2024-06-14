@@ -1,5 +1,5 @@
 ---
-title: "数字规划简明指南 - TidBITS"
+title: "数字遗产规划简明指南 - TidBITS"
 date: 2024-06-14T20:59:46+08:00
 updated: 2024-06-14T20:59:46+08:00
 taxonomies:
