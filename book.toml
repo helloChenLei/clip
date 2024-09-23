@@ -1,7 +1,7 @@
 base_url = "https://clip.demochen.com/"
 [book]
 title = "DemoChen's Clip"
-description = "DemoChen's Clip"
+description = "DemoChen's Clip feedId:41342818708527127+userId:54814953256735744"
 src = "content"
 language = "zh"
 authors = ["DemoChen"]
