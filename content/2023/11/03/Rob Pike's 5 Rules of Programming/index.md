@@ -8,10 +8,9 @@ extra:
   source: https://users.ece.utexas.edu/~adnan/pike.html
   hostname: users.ece.utexas.edu
   author: Rob Pike
-  original_title: "Rob Pike's 5 Rules of Programming "
+  original_title: "Rob Pike's 5 Rules of Programming"
   original_lang: en
 ---
-
 
 ### Rob Pike's 5 Rules of Programming  
 
