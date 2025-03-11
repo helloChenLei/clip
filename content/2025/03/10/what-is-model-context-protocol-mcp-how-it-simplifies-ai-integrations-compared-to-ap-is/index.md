@@ -82,18 +82,14 @@ It's starting to look a lot like a new standard for AI-tool interactions.
 
 MCP 与 API：快速比较[](https://norahsakal.com/blog/mcp-vs-api-model-context-protocol-explained/#mcp-vs-api-quick-comparison "Direct link to MCP vs. API: Quick comparison")
 
-| Feature  特征 | MCP | Traditional API  传统 API |
+
+| Feature | MCP | Traditional API |
 | --- | --- | --- |
-| **Integration Effort  整合工作** | Single, standardized integration  
-单一、标准化的集成 | Separate integration per API  
-
-每个 API 单独集成 |
-| **Real-Time Communication  实时通信** | ✅ Yes  ✅ 是的 | ❌ No  ❌ 没有 |
-| **Dynamic Discovery  动态发现** | ✅ Yes  ✅ 是的 | ❌ No  ❌ 没有 |
-| **Scalability  可扩展性** | Easy (plug-and-play)  简单（即插即用） | Requires additional integrations  
-
-需要额外的集成 |
-| **Security & Control  安全与控制** | Consistent across tools  跨工具保持一致 | Varies by API  因 API 而异 |
+| **Integration Effort** | Single, standardized integration | Separate integration per API |
+| **Real-Time Communication** | ✅ Yes | ❌ No |
+| **Dynamic Discovery** | ✅ Yes | ❌ No |
+| **Scalability** | Easy (plug-and-play) | Requires additional integrations |
+| **Security & Control** | Consistent across tools | Varies by API |
 
 ### Key differences between MCP and traditional APIs:  
 
