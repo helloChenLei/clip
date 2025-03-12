@@ -24,7 +24,7 @@ This article explores recent research advancements in reasoning-optimized LLMs, 
 
 本文探讨了推理优化方面的最新研究进展，特别关注自 DeepSeek R1 发布以来出现的推理时间计算扩展。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Faf9e2677-652a-4af1-9f57-dc0c253d2198_1448x1260.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf9e2677-652a-4af1-9f57-dc0c253d2198_1448x1260.png)
+![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fc1f749e4-4167-4013-b1c9-651c83bf8d3b_1504x756.jpeg)
 
 _The four main categories of implementing reasoning models I explained in [Understanding Reasoning LLMs](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms)_. This article focuses on inference-time-scaling methods.  
 
@@ -34,7 +34,7 @@ Since most readers are likely already familiar with LLM reasoning models, I will
 
 由于大多数读者可能已经熟悉推理模型，因此我将简短地介绍其定义：基于推理的模型旨在通过生成中间步骤或结构化的“思维”过程来解决多步骤问题。与仅共享最终答案的简单问答不同，推理模型要么明确显示其思维过程，要么在内部进行处理，这有助于它们在复杂任务（例如谜题、编码挑战和数学问题）中表现更好。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F8abbfe39-f656-4845-b376-18c1e563210a_1326x564.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8abbfe39-f656-4845-b376-18c1e563210a_1326x564.png)
+![](17417772544031.jpg)
 
 _Side-by-side comparison of a basic LLM’s one-line answer and a reasoning LLM’s explanatory response.  
 
@@ -44,7 +44,7 @@ In general, there are two main strategies to improve reasoning: (1) increasing _
 
 一般来说，有两种主要策略可以提高推理能力：（1）增加_训练_计算或（2）增加_推理_计算，也称为_推理时间扩展_或_测试时间扩展_。（推理计算是指训练后响应用户查询生成模型输出所需的处理能力。）
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fddde6f39-3b88-4962-9d02-2cf767dc82e9_1484x994.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fddde6f39-3b88-4962-9d02-2cf767dc82e9_1484x994.png)
+![](17417772544059.jpg)
 
 _Accuracy improvements can be achieved through increased training or test-time compute, where test-time compute is synonymous with inference-time compute and inference-time scaling. Source: Annotated figure from https://openai.com/index/learning-to-reason-with-llms/  
 
@@ -54,7 +54,7 @@ Note that the plots shown above make it look like we improve reasoning either vi
 
 请注意，上图显示我们似乎通过训练时间计算或测试时间计算来改进推理。然而，LLMs 通常旨在通过**结合**大量训练时间计算（大量训练或微调，通常使用强化学习或专门数据）**和**增加测试时间计算（允许模型“思考更长时间”或在推理期间执行额外计算）来改进推理。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Ff24fdf8c-61a7-451d-a02d-85f8fc4fce73_1600x811.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff24fdf8c-61a7-451d-a02d-85f8fc4fce73_1600x811.png)
+![](17417772544078.jpg)
 
 The many terms that are used synonymously with inference-time scaling.  
 
@@ -64,7 +64,7 @@ To understand how reasoning models are being developed and improved, I think it 
 
 为了理解推理模型是如何发展和改进的，我认为分别研究不同的技术仍然很有用。在我之前的文章[《理解推理》](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms)中，我讨论了更精细的四类分类，如下图所示。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fb5e5fdf9-e72c-497b-9cf4-b4e3c24f33f1_1600x591.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb5e5fdf9-e72c-497b-9cf4-b4e3c24f33f1_1600x591.png)
+![](17417772544096.jpg)
 
 Methods 2-4 in the figure above typically produce models that generate longer responses because they include intermediate steps and explanations in their outputs. Since inference costs scale with response length (e.g., a response twice as long requires twice the compute), these training approaches are inherently linked to inference scaling. However, in this section on inference-time compute scaling, I focus specifically on techniques that explicitly regulate the number of generated tokens, whether through additional sampling strategies, self-correction mechanisms, or other methods.  
 
@@ -74,7 +74,7 @@ In this article, I focus on the interesting new research papers and model releas
 
 在本文中，我将重点介绍2025 年 1 月 22 日 DeepSeek R1 发布**之后**发布的关于扩展**推理时间计算扩展**的有趣的新研究论文和模型发布。（最初，我想在本文中涵盖所有类别的方法，但由于篇幅过长，我决定在未来发布一篇单独的文章，重点介绍训练时间计算方法。）
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F5a24019b-8b52-4780-9c15-877892ab647c_1600x1180.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5a24019b-8b52-4780-9c15-877892ab647c_1600x1180.png)
+![](17417772544112.jpg)
 
 _Development process of DeepSeek's reasoning models that I discussed in my previous article, Understanding Reasoning LLMs (https://magazine.sebastianraschka.com/p/understanding-reasoning-llms).  
 
@@ -132,7 +132,7 @@ One approach here is prompt engineering, such as chain-of-thought (CoT) promptin
 
 一种方法是提示工程，例如思路链 (CoT) 提示，其中“逐步思考”等短语会引导模型生成中间推理步骤。这可以提高复杂问题的准确性，但对于简单的事实查询而言则没有必要。由于 CoT 提示会生成更多标记，因此它们实际上使推理更加昂贵。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F5d37faa4-3261-492c-85a4-766926b8c17c_1600x419.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5d37faa4-3261-492c-85a4-766926b8c17c_1600x419.png)
+![](17417772544130.jpg)
 
 _An example of classic CoT prompting from the 2022 Large Language Models are Zero-Shot Reasoners paper (https://arxiv.org/abs/2205.11916).  
 
@@ -142,7 +142,7 @@ Another method involves voting and search strategies, such as majority voting or
 
 另一种方法涉及投票和搜索策略，例如多数投票或集束搜索，通过选择最佳输出来改进响应。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F5ad9742b-993f-4ecd-8f80-2fa41d43164b_1334x798.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5ad9742b-993f-4ecd-8f80-2fa41d43164b_1334x798.png)
+![](17417772544156.jpg)
 
 _Different search-based methods rely on a process-reward-based model to select the best answer. Annotated figure from the LLM Test-Time Compute paper, https://arxiv.org/abs/2408.03314  
 
@@ -181,7 +181,7 @@ In short, their approach is twofold:
     b) 通过添加思考结束标记分隔符来停止生成（“最终答案：”）。他们称这种长度控制为“预算强制”。
     
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F0e7f4d94-9f8f-4353-87ad-78f3cba7b9cd_1154x854.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0e7f4d94-9f8f-4353-87ad-78f3cba7b9cd_1154x854.png)
+![](17417772544182.jpg)
 
 _Illustration of "wait" token insertion to control the length of the output. Annotated figure from https://arxiv.org/abs/2501.19393.  
 
@@ -191,7 +191,7 @@ Budget forcing can be seen as a sequential inference scaling technique because i
 
 预算强制可以看作是一种顺序推理扩展技术，因为它仍然一次生成一个 token（但数量更多）。相比之下，我们有多数表决等并行技术，可以聚合多个独立的完成。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fd7f0c49b-a644-4142-bed0-7d114ecd39c2_798x456.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd7f0c49b-a644-4142-bed0-7d114ecd39c2_798x456.png)
+![](17417772544215.jpg)
 
 _Correlation between response accuracy and length. Annotated figure from https://arxiv.org/abs/2501.19393.  
 
@@ -213,7 +213,7 @@ Interestingly, they also tried other tokens like "_Hmm_" but found that "_Wait_"
 
 有趣的是，他们还尝试了其他标记，例如“_嗯_”，但发现“_等待_”的表现略好一些。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F6bdfe7db-8c97-4240-8be0-11efa7abdf7c_758x510.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6bdfe7db-8c97-4240-8be0-11efa7abdf7c_758x510.png)
+![](17417772544239.jpg)
 
 "_Wait"_ vs "_Hmm"_ tokens. _Annotated figure from https://arxiv.org/abs/2501.19393._  
 
@@ -256,7 +256,7 @@ By doing steps 1-4 iteratively, the model refines its original responses.
 
 通过迭代执行步骤 1-4，模型可以改进其原始响应。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fd2a1bd16-7cf7-4898-8dce-a2d8352f76a8_1600x819.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd2a1bd16-7cf7-4898-8dce-a2d8352f76a8_1600x819.png)
+![](17417772544264.jpg)
 
 _Annotated figure from "Test-Time Preference Optimization: On-the-Fly Alignment via Iterative Textual Feedback", https://arxiv.org/abs/2501.12895  
 
@@ -278,7 +278,7 @@ Their approach does not require model fine-tuning and empirically improves accur
 
 他们的方法不需要模型微调，并且通过经验提高了多个具有挑战性的测试集的准确性。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F7111ccaa-c4c1-4c7c-84f9-74d38df3c663_1528x894.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7111ccaa-c4c1-4c7c-84f9-74d38df3c663_1528x894.png)
+![](17417772544291.jpg)
 
 _Annotated figure from "Thoughts Are All Over the Place: On the Underthinking of o1-Like LLMs", https://arxiv.org/abs/2501.18585  
 
@@ -300,7 +300,7 @@ So, while these findings suggest that scaling inference-time compute can improve
 
 因此，虽然这些发现表明扩展推理时间计算可以提高安全性，但仅靠这一点并不能完全解决对抗鲁棒性问题。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F704acd82-10a8-4879-9bd3-26bb67c3155f_1600x1173.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F704acd82-10a8-4879-9bd3-26bb67c3155f_1600x1173.png)
+![](17417772544320.jpg)
 
 _Annotated figure from "Trading Inference-Time Compute for Adversarial Robustness", https://arxiv.org/abs/2501.18841  
 
@@ -314,7 +314,7 @@ The researchers combine classic Monte Carlo Tree Search inference-time scaling w
 
 研究人员将经典的蒙特卡洛树搜索推理时间扩展与“联想记忆”相结合，后者在探索推理路径时充当知识库。使用这种所谓的联想记忆，LLM 可以更轻松地考虑早期的推理路径，并在响应生成过程中动态使用相关信息。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F5d0635fb-c0b4-45df-b8d3-b54254ab92b5_1600x777.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5d0635fb-c0b4-45df-b8d3-b54254ab92b5_1600x777.png)
+![](17417772544350.jpg)
 
 _Annotated figure from "CoAT: Chain-of-Associated-Thoughts Framework for Enhancing Large Language Models Reasoning", https://arxiv.org/abs/2502.02390  
 
@@ -332,7 +332,7 @@ What's unique is that this exploration does not require without relying on exter
 
 独特之处在于，这种探索不需要依赖外部奖励模型（与我在本文“1. 推理时间计算扩展方法”部分开头提到的使用基于过程奖励模型的基于搜索的方法不同）。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F1df5fbf3-97f2-4976-b46f-2d5196b6bdc4_1594x888.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1df5fbf3-97f2-4976-b46f-2d5196b6bdc4_1594x888.png)
+![](17417772544382.jpg)
 
 _Annotated figure from "Step Back to Leap Forward: Self-Backtracking for Boosting Reasoning of Language Models", https://arxiv.org/abs/2502.04404  
 
@@ -354,7 +354,7 @@ However, a key drawback is the lack of explicit reasoning steps, which are (in m
 
 然而，一个关键的缺点是缺乏明确的推理步骤，这（在我看来）对于人类的可解释性很有用，并且是思路链方法的一大优势。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fb82da925-5736-44ba-bed1-ea3207b06382_1516x602.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb82da925-5736-44ba-bed1-ea3207b06382_1516x602.png)
+![](17417772544412.jpg)
 
 Annotated figure from "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach", https://arxiv.org/abs/2502.05171  
 
@@ -380,7 +380,7 @@ These findings highlight how inference-time scaling can significantly improve LL
 
 这些发现强调了推理时间扩展如何显著改善LLMs，其中，小LLMs，在适当的推理计算预算下，可以胜过更大的模型。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F3c471e7f-36e7-41a8-a7e0-80bebf3c0f36_1600x1046.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3c471e7f-36e7-41a8-a7e0-80bebf3c0f36_1600x1046.png)
+![](17417772544440.jpg)
 
 Annotated figure from "Can 1B LLM Surpass 405B LLM? Rethinking Compute-Optimal Test-Time Scaling", https://arxiv.org/abs/2502.06703  
 
@@ -418,7 +418,7 @@ The main finding is that while scaling inference-time computation can improve re
 
 主要发现是，虽然扩展推理时间计算可以提高推理能力，但没有一种技术能够在所有任务中始终优于其他技术。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F42115dab-1086-4035-9a64-65a83631377e_1600x1023.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F42115dab-1086-4035-9a64-65a83631377e_1600x1023.png)
+![](17417772544472.jpg)
 
 Annotated figure from _Inference-Time Computations for LLM Reasoning and Planning: A Benchmark and Insights_, https://www.arxiv.org/abs/2502.12521  
 
@@ -432,7 +432,7 @@ The Inner Thinking Transformer (ITT) dynamically allocates more compute during i
 
 Inner Thinking Transformer (ITT) 在推理过程中动态分配更多计算。与基于标准 Transformer 的 LLMs 中对所有 token 使用固定深度（= 使用相同数量的层）不同，ITT 采用自适应 token 路由为困难 token 分配更多计算。这些困难 token 多次通过同一层进行额外处理，从而增加了这些困难 token 的推理计算预算。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F4a6eb47e-fcbe-4c71-8d45-e7d82ae14ba1_1414x1090.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a6eb47e-fcbe-4c71-8d45-e7d82ae14ba1_1414x1090.png)
+![](17417772544504.jpg)
 
 _Annotated figure from "Inner Thinking Transformer: Leveraging Dynamic Depth Scaling to Foster Adaptive Internal Thinking", https://arxiv.org/abs/2502.13842  
 
@@ -450,7 +450,7 @@ S\* is a test-time compute scaling method designed specifically for code generat
 
 S\* 是一种专为代码生成设计的测试时计算扩展方法，可改善并行扩展（生成多个解决方案）和顺序扩展（迭代调试）。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F94a88f17-b4b1-4642-aeb1-6db29071ef91_972x752.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F94a88f17-b4b1-4642-aeb1-6db29071ef91_972x752.png)
+![](17417772544538.jpg)
 
 _Annotated figure from "S\*: Test Time Scaling for Code Generation", https://arxiv.org/abs/2502.14382  
 
@@ -616,7 +616,7 @@ They train these specialized "feedback" and "edit" models using a large dataset 
 
 他们使用大量人工注释的响应和反馈数据集来训练这些专门的“反馈”和“编辑”模型。然后，这些模型通过在推理时间内生成更好的反馈和进行更有效的编辑来帮助改善响应。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2F73568387-83fb-4744-bd3d-f5cbcfe53f1d_1136x716.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F73568387-83fb-4744-bd3d-f5cbcfe53f1d_1136x716.png)
+![](17417772544571.png)
 
 Inference-time compute scaling has become one of the hottest research topics this year to improve the reasoning abilities of large language models without requiring modification to model weights.   
 
@@ -644,7 +644,7 @@ As an example, an o1 model, which uses heavy inference time scaling, is actually
 
 举例来说，使用重度推理时间缩放的 o1 模型实际上仍然比可能不使用推理时间缩放的更大的 GPT-4.5 模型稍微便宜一些。
 
-[![](https3A2F2Fsubstack-post-media.s3.amazonaws.com2Fpublic2Fimages2Fc1f749e4-4167-4013-b1c9-651c83bf8d3b_1504x756.png)](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1f749e4-4167-4013-b1c9-651c83bf8d3b_1504x756.png)
+![](17417772544577.png)
 
 (It will be interesting to see how well GPT-4.5 will perform with o1- or o3-style inference-time scaling.)  
 
