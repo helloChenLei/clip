@@ -8,7 +8,7 @@ extra:
   source: https://www.lennysnewsletter.com/p/how-to-find-work-you-love-bob-moesta
   hostname: www.lennysnewsletter.com
   author: Lenny's Newsletter
-  original_title: "How to find work you love | Bob Moesta (Jobs-to-be-Done co-creator, author of "Job Moves”)"
+  original_title: "How to find work you love | Bob Moesta"
   original_lang: en
 ---
 
